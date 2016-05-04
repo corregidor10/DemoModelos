@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/windows/2007/BusinessDataCatalog" Name="Alumnos">
+  <LobSystems>
+    <LobSystem Name="Alumnos" Type="DotNetAssembly">
+      <LobSystemInstances>
+        <LobSystemInstance Name="Alumnos" />
+      </LobSystemInstances>
+      <Entities>
+        <Entity Name="Alumno" Namespace="DemoModelos.Alumnos" EstimatedInstanceCount="1000" Version="1.0.0.21">
+          <Properties>
+            <Property Name="Class" Type="System.String">DemoModelos.Alumnos.AlumnoService, Alumnos</Property>
+          </Properties>
+          <Identifiers>
+            <Identifier Name="Id" TypeName="System.Int32" />
+            <Identifier Name="Borrame" TypeName="System.Double" />
+            
+            <!-- TODO: Change the name of the ID and if needed the TypeName of your identifier. -->
+          </Identifiers>
+          <Methods>
+            <!-- start finder method -->
+            <Method Name="ReadList">
+              <!-- TODO: Change the name of the method if needed. -->
+              <Parameters>
+                <Parameter Direction="Return" Name="returnParameter">
+                  <TypeDescriptor TypeName="System.Collections.Generic.IEnumerable`1[[DemoModelos.Alumnos.Alumno, Alumnos]]" IsCollection="true" Name="AlumnosList">
+                    <TypeDescriptors>
+                      <TypeDescriptor Name="Alumno" TypeName="DemoModelos.Alumnos.Alumno, Alumnos">
+                        <TypeDescriptors>
+                          <TypeDescriptor Name="Id" TypeName="System.Int32" IdentifierName="Id" IsCollection="false" />
+                          <TypeDescriptor Name="Nombre" TypeName="System.String" />
+                          <TypeDescriptor Name="Apellidos" TypeName="System.String" />
+                          <TypeDescriptor Name="Edad" TypeName="System.Int32" IsCollection="false" /></TypeDescriptors></TypeDescriptor></TypeDescriptors>
+                  </TypeDescriptor>
+                </Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Type="Finder" ReturnParameterName="returnParameter" Default="true" Name="ReadList" DefaultDisplayName="Entity1 List" />
+              </MethodInstances>
+            </Method>
+            <!-- end finder method -->
+            <!-- start specific finder method -->
+            <Method Name="ReadItem">
+              <Parameters>
+                <Parameter Direction="In" Name="id">
+                  <TypeDescriptor TypeName="System.Int32" IdentifierName="Id" Name="Identifier1" IsCollection="false" />
+                </Parameter>
+                <Parameter Direction="Return" Name="returnParameter">
+                  <TypeDescriptor TypeName="DemoModelos.Alumnos.Alumno, Alumnos" Name="Alumno">
+                    <TypeDescriptors>
+                      <TypeDescriptor TypeName="System.Int32" IdentifierName="Id" Name="Id" IsCollection="false" />
+                      <TypeDescriptor TypeName="System.String" Name="Nombre" />
+                      <!-- TODO: Add TypeDescriptors when you add properties to Entity1. -->
+                      <TypeDescriptor Name="Apellidos" TypeName="System.String" />
+                      <TypeDescriptor Name="Edad" TypeName="System.Int32" IsCollection="false" /></TypeDescriptors>
+                  </TypeDescriptor>
+                </Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Type="SpecificFinder" ReturnParameterName="returnParameter" Default="true" Name="ReadItem" DefaultDisplayName="Read Entity1" />
+              </MethodInstances>
+            </Method>
+            <!-- end specific finder method -->
+          </Methods>
+        </Entity>
+      </Entities>
+    </LobSystem>
+  </LobSystems>
+</Model>
